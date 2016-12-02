@@ -1,3 +1,4 @@
 [
-  "hubot-character"
+  "hubot-character",
+  "hubot-heroku-keepalive"
 ]
