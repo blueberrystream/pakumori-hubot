@@ -1,4 +1,5 @@
 [
+  "hubot-character",
   "hubot-heroku-keepalive",
   "hubot-diagnostics",
   "hubot-help",
