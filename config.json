@@ -44,6 +44,18 @@
         "あら、女の子扱いされるなんて随分と久しぶりなのだけれど",
         "そのお遊びもそろそろ見飽きたのだけれど、まだ私を楽しませられそう？",
         "いずれ、この場にいる全員のはらを切り開いてあげる。それまではせいぜい腸をかわいがっておいて"
+      ]    },
+    {
+      "name": "スパイスガーデンのおじさん",
+      "icon": ":man_with_turban::skin-tone-5:",
+      "respond": "nan",
+      "messages": [
+        "ナーン :man_with_turban::skin-tone-5:",
+        "ライス？ :anger:",
+        ":ear: :question: :rice: :question:",
+        ":ear: :fire:",
+        ":rice: :anger:",
+        "NaN :question:"
       ]
     }
   ]
