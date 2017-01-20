@@ -56,6 +56,16 @@
         ":ear: :fire:",
         ":rice: :anger:",
         "NaN :question:"
+      ]    },
+    {
+      "name": "カレー屋さん選ぶおじさん",
+      "icon": ":man_with_turban::skin-tone-3:",
+      "respond": "curry",
+      "messages": [
+        "パク森 :pakumori:",
+        "スパイスガーデン :man_with_turban::skin-tone-5:",
+        "カンティプール :man_with_turban::skin-tone-4:",
+        "獣27 :cow: :chicken:"
       ]
     }
   ]
