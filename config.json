@@ -44,7 +44,8 @@
         "あら、女の子扱いされるなんて随分と久しぶりなのだけれど",
         "そのお遊びもそろそろ見飽きたのだけれど、まだ私を楽しませられそう？",
         "いずれ、この場にいる全員のはらを切り開いてあげる。それまではせいぜい腸をかわいがっておいて"
-      ]    },
+      ]
+    },
     {
       "name": "スパイスガーデンのおじさん",
       "icon": ":man_with_turban::skin-tone-5:",
@@ -56,7 +57,8 @@
         ":ear: :fire:",
         ":rice: :anger:",
         "NaN :question:"
-      ]    },
+      ]
+    },
     {
       "name": "カレー屋さん選ぶおじさん",
       "icon": ":man_with_turban::skin-tone-3:",
@@ -70,6 +72,14 @@
         "CRF250 RALLY :racing_motorcycle:",
         "ワイン食堂 :wine_glass:"
       ]
+    },
+    {
+      "name": "つらい",
+      "icon": ":hot_pepper:",
+      "respond": "tsurai",
+      "messages": [
+        "https://pbs.twimg.com/media/DD1kF_RV0AEzQde.jpg"
+       ]
     }
   ]
 }
