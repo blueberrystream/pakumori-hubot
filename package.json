@@ -5,19 +5,10 @@
   "author": "KID the Euforia <kid0725@gmail.com>",
   "description": "pakumori-hubot",
   "dependencies": {
-    "hubot": "^2.19.0",
-    "hubot-character": "^0.1.8",
-    "hubot-diagnostics": "0.0.1",
-    "hubot-google-images": "^0.2.6",
-    "hubot-google-translate": "^0.2.0",
-    "hubot-help": "^0.2.0",
-    "hubot-heroku-keepalive": "^1.0.2",
-    "hubot-maps": "0.0.2",
-    "hubot-pugme": "^0.1.0",
-    "hubot-redis-brain": "0.0.3",
-    "hubot-rules": "^0.1.1",
-    "hubot-scripts": "^2.17.2",
-    "hubot-shipit": "^0.2.0",
-    "hubot-slack": "^4.2.2"
+    "hubot": "^3.0.1",
+    "hubot-character": "blueberrystream/hubot-character#evil",
+    "hubot-heroku-keepalive": "^1.0.3",
+    "hubot-slack": "^4.4.0",
+    "newrelic": "^2.4.1"
   }
 }
