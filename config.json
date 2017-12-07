@@ -101,33 +101,18 @@
     {
       "name": "しばいぬ",
       "icon": ":doge:",
-      "respond": "わん",
-      "messages": [
-        "http://blueberrystream.tteesstt.info/shiba.php"
-       ]
-    },
-    {
-      "name": "しばいぬ",
-      "icon": ":doge:",
-      "respond": "ワン",
-      "messages": [
-        "http://blueberrystream.tteesstt.info/shiba.php"
-       ]
-    },
-    {
-      "name": "しばいぬ",
-      "icon": ":doge:",
       "respond": "いぬ",
       "messages": [
-        "http://blueberrystream.tteesstt.info/shiba.php"
-       ]
-    },
-    {
-      "name": "しばいぬ",
-      "icon": ":doge:",
-      "respond": "しば",
-      "messages": [
-        "http://blueberrystream.tteesstt.info/shiba.php"
+        "http://blueberrystream.tteesstt.info/shiba.php?1",
+        "http://blueberrystream.tteesstt.info/shiba.php?2",
+        "http://blueberrystream.tteesstt.info/shiba.php?3",
+        "http://blueberrystream.tteesstt.info/shiba.php?4",
+        "http://blueberrystream.tteesstt.info/shiba.php?5",
+        "http://blueberrystream.tteesstt.info/shiba.php?6",
+        "http://blueberrystream.tteesstt.info/shiba.php?7",
+        "http://blueberrystream.tteesstt.info/shiba.php?8",
+        "http://blueberrystream.tteesstt.info/shiba.php?9",
+        "http://blueberrystream.tteesstt.info/shiba.php?0"
        ]
     }
   ]
