@@ -97,6 +97,38 @@
         "http://tenhoo.jp/niw/wp-content/uploads/2014/09/5f1f10863497e6dff2aacde1b5dbd4661.jpg",
         "http://tenhoo.jp/niw/wp-content/uploads/2014/09/79b34b954166c67295ff0cdc60581a011.jpg"
        ]
+    },
+    {
+      "name": "しばいぬ",
+      "icon": ":doge:",
+      "respond": "わん",
+      "messages": [
+        "http://blueberrystream.tteesstt.info/shiba.php"
+       ]
+    },
+    {
+      "name": "しばいぬ",
+      "icon": ":doge:",
+      "respond": "ワン",
+      "messages": [
+        "http://blueberrystream.tteesstt.info/shiba.php"
+       ]
+    },
+    {
+      "name": "しばいぬ",
+      "icon": ":doge:",
+      "respond": "いぬ",
+      "messages": [
+        "http://blueberrystream.tteesstt.info/shiba.php"
+       ]
+    },
+    {
+      "name": "しばいぬ",
+      "icon": ":doge:",
+      "respond": "しば",
+      "messages": [
+        "http://blueberrystream.tteesstt.info/shiba.php"
+       ]
     }
   ]
 }
