@@ -79,7 +79,7 @@
       "hear": "つらい|辛い|ts?urai",
       "messages": [
         "https://pbs.twimg.com/media/DD1kF_RV0AEzQde.jpg"
-       ]
+      ]
     },
     {
       "name": "みんなのテンホウ",
@@ -95,7 +95,7 @@
         "http://tenhoo.jp/niw/wp-content/uploads/2014/12/a4670b976a6fe9028a54f276b4e86a141.jpg",
         "http://tenhoo.jp/niw/wp-content/uploads/2014/09/5f1f10863497e6dff2aacde1b5dbd4661.jpg",
         "http://tenhoo.jp/niw/wp-content/uploads/2014/09/79b34b954166c67295ff0cdc60581a011.jpg"
-       ]
+      ]
     },
     {
       "name": "にゃんこ",
@@ -104,13 +104,44 @@
       "messages": [
         "https://cataas.com/cat?{time}",
         "https://cataas.com/cat/gif?{time}"
-       ]
+      ]
     },
     {
       "name": "しばいぬ",
       "icon": ":doge:",
       "respond": "いぬ|イヌ|犬|dog",
       "json_url": "http://shibe.online/api/shibes"
+    },
+    {
+      "name": "ikaduti-bot",
+      "icon": ":ikaduchichan:",
+      "respond": "ゴロゴロ|ごろごろ",
+      "messages": [
+        "＜司令官、私がいるじゃない！",
+        "＜雷よ！かみなりじゃないわ！そこのとこもよろしく頼むわねっ！",
+        "＜元気ないわねーそんなんじゃ駄目よぉ！",
+        "＜そうそう。もーっと私に頼っていいのよ！",
+        "＜はーい！司令官。行っきますよー！",
+        "＜雷、司令官のために出撃しちゃうねっ",
+        "なによもう、雷は大丈夫なんだから！"
+      ]
+    },
+    {
+      "name": "ikaduti-bot",
+      "icon": ":ikaduchichan:",
+      "respond": "ランチ|はらへり?|お腹(空|す)いた|おなかすいた",
+      "messages": [
+        "＜もう、さっき食べたでしょ！",
+        "＜ゴロゴロー。:zap:",
+        "っ高速修復材 :bath:",
+        "っボーキサイト:large_orange_diamond:",
+        "＜お魚なんてどうかしら！ :fish:",
+        "＜揚げたてのカツよ～ :pig:",
+        "＜たまにはお寿司なんてどうかしら？ :sushi:",
+        "＜おなかが空いたなら、お肉を食べればいいじゃない！ :meat_on_bone:",
+        "＜金曜日はカレーを食べるといいと思うわ！ :curry:",
+        "＜中華始めました。:fish_cake:"
+      ]
     }
   ]
 }
