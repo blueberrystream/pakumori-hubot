@@ -63,7 +63,7 @@ module.exports = (robot) => {
 
   robot.respond(/(zny|zeny) pools/i, (res) => {
     apiURLs.forEach((url) => {
-      this.robot.http(url)
+      robot.http(url)
         .header('Accept', 'application/json')
         .get()((err, response, body) => {
           let message = "";
