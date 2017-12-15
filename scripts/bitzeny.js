@@ -32,7 +32,7 @@ function initSlackAPI(token) {
     'logging': false,
     'autoReconnect': true
   });
-};
+}
 
 module.exports = (robot) => {
   let slack;
@@ -87,4 +87,4 @@ module.exports = (robot) => {
         });
     });
   });
-}
+};
