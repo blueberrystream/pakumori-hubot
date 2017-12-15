@@ -3,6 +3,7 @@
 //
 // Commands
 //   hubot zny|zeny pools
+/* jshint esversion: 6 */
 
 "use strict"
 const format = require("string-template");
