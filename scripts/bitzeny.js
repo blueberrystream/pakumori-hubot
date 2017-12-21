@@ -87,7 +87,22 @@ module.exports = (robot) => {
       });
     });
   });
+
+  robot.respond(/(z|zny|zeny) (相場|s|souba|soba)/i, (res) => {
+    robot.http('https://c-cex.com/t/zny-btc.json').header('Accept', 'application/json').get()((err, response, body) => {
+      if (!err && response.statusCode === 200) {
+        const znyBtcAvg = JSON.parse(body).avg;
+        robot.http('https://api.zaif.jp/api/1/ticker/btc_jpy').header('Accept', 'application/json').get()((err, response, body) => {
+          if (!err && response.statusCode === 200) {
+            const btcJpyBid = JSON.parse(body).bid;
+            postMessageWithSlack(format('ZNY/JPY {yen}', { 'yen': znyBtcAvg * btcJpyBid }), res.message.room, 'BitZeny', ':bitzeny:');
+          } else {
+            postMessageWithSlack('failed: zaif api', res.message.room, 'BitZeny', ':bitzeny:');
+          }
         });
+      } else {
+        postMessageWithSlack('failed: c-cex api', res.message.room, 'BitZeny', ':bitzeny:');
+      }
     });
   });
 };
