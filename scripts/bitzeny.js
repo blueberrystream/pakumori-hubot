@@ -16,14 +16,11 @@ const apiURLs = [
   'https://hogepool.net/?page=api&action=public',
   'https://n-zeny.mdpool.info/?page=api&action=public',
   'https://pool.knyacki.xyz/?page=api&action=public',
-  'https://pool.knyacki.xyz/?page=api&action=public',
-  'https://pool1.znymining.net/?page=api&action=public',
   'https://pool1.znymining.net/?page=api&action=public',
   'https://portal.bitzenypool.work/?page=api&action=public',
   'https://soup.misosi.ru/?page=api&action=public',
   'https://wpool.work/?page=api&action=public',
   'https://zny.arunyastyle.com/?page=api&action=public',
-  'https://zny.coiner.site/?page=api&action=public',
   'https://zny.coiner.site/?page=api&action=public',
   'https://zny.powerpool.jp/?page=api&action=public'
 ];
