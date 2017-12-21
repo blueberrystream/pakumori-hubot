@@ -11,16 +11,21 @@ const format = require("string-template");
 const slackAPI = require('slackbotapi');
 const slackAPIToken = process.env.HUBOT_SLACK_TOKEN;
 const apiURLs = [
-  'https://soup.misosi.ru/?page=api&action=public',
-  'https://bunnymining.work/bitzeny/?page=api&action=public',
   'https://bitzeny.mizutamari.work/?page=api&action=public',
-  'https://bitzenypool.work/?page=api&action=public',
-  'https://zny.arunyastyle.com/?page=api&action=public'
-];
-const apiURLsLowPriority = [
+  'https://bunnymining.work/bitzeny/?page=api&action=public',
+  'https://hogepool.net/?page=api&action=public',
+  'https://n-zeny.mdpool.info/?page=api&action=public',
+  'https://pool.knyacki.xyz/?page=api&action=public',
+  'https://pool.knyacki.xyz/?page=api&action=public',
   'https://pool1.znymining.net/?page=api&action=public',
+  'https://pool1.znymining.net/?page=api&action=public',
+  'https://portal.bitzenypool.work/?page=api&action=public',
+  'https://soup.misosi.ru/?page=api&action=public',
+  'https://wpool.work/?page=api&action=public',
+  'https://zny.arunyastyle.com/?page=api&action=public',
   'https://zny.coiner.site/?page=api&action=public',
-  'https://pool.knyacki.xyz/?page=api&action=public'
+  'https://zny.coiner.site/?page=api&action=public',
+  'https://zny.powerpool.jp/?page=api&action=public'
 ];
 
 function initSlackAPI(token) {
@@ -61,7 +66,7 @@ module.exports = (robot) => {
     });
   }
 
-  robot.respond(/(zny|zeny) pools/i, (res) => {
+  robot.respond(/(z|zny|zeny) (ps|pools)/i, (res) => {
     apiURLs.forEach((url) => {
       robot.http(url)
         .header('Accept', 'application/json')
