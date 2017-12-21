@@ -10,19 +10,25 @@ const format = require("string-template");
 
 const slackAPI = require('slackbotapi');
 const slackAPIToken = process.env.HUBOT_SLACK_TOKEN;
-const apiURLs = [
-  'https://bitzeny.mizutamari.work/?page=api&action=public',
-  'https://bunnymining.work/bitzeny/?page=api&action=public',
-  'https://hogepool.net/?page=api&action=public',
-  'https://n-zeny.mdpool.info/?page=api&action=public',
-  'https://pool.knyacki.xyz/?page=api&action=public',
-  'https://pool1.znymining.net/?page=api&action=public',
-  'https://portal.bitzenypool.work/?page=api&action=public',
-  'https://soup.misosi.ru/?page=api&action=public',
-  'https://wpool.work/?page=api&action=public',
-  'https://zny.arunyastyle.com/?page=api&action=public',
-  'https://zny.coiner.site/?page=api&action=public',
-  'https://zny.powerpool.jp/?page=api&action=public'
+const mposURLs = [
+  'https://bitzeny.mizutamari.work',
+  'https://bitzeny.mypool.tokyo',
+  'https://bunnymining.work/bitzeny',
+  'https://coinrush.work',
+  'https://hogepool.net',
+  'https://n-zeny.mdpool.info',
+  'https://pool.knyacki.xyz',
+  'https://pool1.znymining.net',
+  'https://portal.bitzenypool.work',
+  'https://soup.misosi.ru',
+  'https://ukkey3.space/bitzeny',
+  'https://www.wmapool.net',
+  'https://zny.arunyastyle.com',
+  'https://zny.coiner.site',
+  'https://zny.powerpool.jp'
+];
+const nompURLs = [
+  'https://wpool.work'
 ];
 
 function initSlackAPI(token) {
@@ -64,8 +70,8 @@ module.exports = (robot) => {
   }
 
   robot.respond(/(z|zny|zeny) (ps|pools)/i, (res) => {
-    apiURLs.forEach((url) => {
-      robot.http(url).header('Accept', 'application/json').get()((err, response, body) => {
+    mposURLs.forEach((url) => {
+      robot.http(url + '/?page=api&action=public').header('Accept', 'application/json').get()((err, response, body) => {
         let message = "";
         if (err) {
           message = err;
@@ -74,11 +80,30 @@ module.exports = (robot) => {
             message = 'response status code: ' + response.statusCode;
           } else {
             const publicData = JSON.parse(body);
-            const siteURL = url.replace(/\?.*/, '');
             message = format('{siteName} {siteURL} {hashRate}KH/s', {
               'siteName': publicData.pool_name,
-              'siteURL': siteURL,
+              'siteURL': url,
               'hashRate': publicData.hashrate
+            });
+          }
+        }
+
+        postMessageWithSlack(message, res.message.room, 'BitZeny', ':bitzeny:');
+      });
+    });
+    nompURLs.forEach((url) => {
+      robot.http(url + '/api/stats').header('Accept', 'application/json').get()((err, response, body) => {
+        let message = "";
+        if (err) {
+          message = err;
+        } else {
+          if (response.statusCode !== 200) {
+            message = 'response status code: ' + response.statusCode;
+          } else {
+            const publicData = JSON.parse(body);
+            message = format('{siteURL} {hashRate}KH/s', {
+              'siteURL': url,
+              'hashRate': publicData.pools.bitzeny.hashrate / 1000
             });
           }
         }
