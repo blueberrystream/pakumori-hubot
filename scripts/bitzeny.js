@@ -65,27 +65,28 @@ module.exports = (robot) => {
 
   robot.respond(/(z|zny|zeny) (ps|pools)/i, (res) => {
     apiURLs.forEach((url) => {
-      robot.http(url)
-        .header('Accept', 'application/json')
-        .get()((err, response, body) => {
-          let message = "";
-          if (err) {
-            message = err;
+      robot.http(url).header('Accept', 'application/json').get()((err, response, body) => {
+        let message = "";
+        if (err) {
+          message = err;
+        } else {
+          if (response.statusCode !== 200) {
+            message = 'response status code: ' + response.statusCode;
           } else {
-            if (response.statusCode !== 200) {
-              message = 'response status code: ' + response.statusCode;
-            } else {
-              const publicData = JSON.parse(body);
-              const siteURL = url.replace(/\?.*/, '');
-              message = format('{siteName} {siteURL} {hashRate}KH/s', {
-                'siteName': publicData.pool_name,
-                'siteURL': siteURL,
-                'hashRate': publicData.hashrate
-              });
-            }
+            const publicData = JSON.parse(body);
+            const siteURL = url.replace(/\?.*/, '');
+            message = format('{siteName} {siteURL} {hashRate}KH/s', {
+              'siteName': publicData.pool_name,
+              'siteURL': siteURL,
+              'hashRate': publicData.hashrate
+            });
           }
+        }
 
-          postMessageWithSlack(message, res.message.room, 'BitZeny', ':bitzeny:');
+        postMessageWithSlack(message, res.message.room, 'BitZeny', ':bitzeny:');
+      });
+    });
+  });
         });
     });
   });
