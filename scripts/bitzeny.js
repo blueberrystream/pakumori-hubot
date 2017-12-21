@@ -74,10 +74,10 @@ module.exports = (robot) => {
       robot.http(url + '/?page=api&action=public').header('Accept', 'application/json').get()((err, response, body) => {
         let message = "";
         if (err) {
-          message = err;
+          message = url + ' | ' + err;
         } else {
           if (response.statusCode !== 200) {
-            message = 'response status code: ' + response.statusCode;
+            message = url + ' | response status code: ' + response.statusCode;
           } else {
             const publicData = JSON.parse(body);
             message = format('{siteName} {siteURL} {hashRate}KH/s', {
@@ -95,10 +95,10 @@ module.exports = (robot) => {
       robot.http(url + '/api/stats').header('Accept', 'application/json').get()((err, response, body) => {
         let message = "";
         if (err) {
-          message = err;
+          message = url + ' | ' + err;
         } else {
           if (response.statusCode !== 200) {
-            message = 'response status code: ' + response.statusCode;
+            message = url + ' | response status code: ' + response.statusCode;
           } else {
             const publicData = JSON.parse(body);
             message = format('{siteURL} {hashRate}KH/s', {
