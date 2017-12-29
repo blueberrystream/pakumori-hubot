@@ -142,6 +142,28 @@
         "＜金曜日はカレーを食べるといいと思うわ！ :curry:",
         "＜中華始めました。:fish_cake:"
       ]
+    },
+    {
+      "name": "えりち",
+      "icon": ":eli:",
+      "hear": "かしこい",
+      "messages": [
+        "かわいい？"
+      ]
+    },
+    {
+      "name": "えりち",
+      "icon": ":eli:",
+      "hear": "エリーチカ！?",
+      "messages": [
+        "http://blog-imgs-73.fc2.com/k/s/h/ksheryl/5e11ab5c.jpg",
+        "http://livedoor.4.blogimg.jp/jin115/imgs/d/1/d16a2d44.gif",
+        "https://iwiz-chie.c.yimg.jp/im_sigguQCOutMnjhLvMGlwuPYhtw---x320-y320-exp5m-n1/d/iwiz-chie/que-11128809736",
+        "http://livedoor.blogimg.jp/seiyufan/imgs/9/2/9271f40b-s.jpg",
+        "https://lohas.nicoseiga.jp/thumb/3809703i",
+        "https://lohas.nicoseiga.jp/thumb/5403267i",
+        "https://lohas.nicoseiga.jp/thumb/2927172i"
+      ]
     }
   ]
 }
