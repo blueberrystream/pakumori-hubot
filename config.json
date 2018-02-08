@@ -176,7 +176,7 @@
       ]
     },
     {
-      "name": "\(\)",
+      "name": "\\(\\)",
       "icon": ":parenthesis:",
       "hear": "()",
       "messages": [
