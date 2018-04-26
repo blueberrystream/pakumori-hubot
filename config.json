@@ -194,7 +194,7 @@
     {
       "name": "？",
       "icon": ":question:",
-      "hear": "ls|ll|git log",
+      "hear": "^(ls|ll|git ?|vim? ?|cd ?|mv ?|cp ?|rm ?|mkdir ?|rmdir ?|less ?|cat ?)",
       "messages": [
         "`Command not found`"
       ]
