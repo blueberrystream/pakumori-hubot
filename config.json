@@ -190,6 +190,14 @@
       "messages": [
         "うーーーーい。（ｫﾗｲｯ､ｫﾗｲｯ"
       ]
+    },
+    {
+      "name": "？",
+      "icon": ":question:",
+      "hear": "ls|ll|git log",
+      "messages": [
+        "`Command not found`"
+      ]
     }
   ]
 }
