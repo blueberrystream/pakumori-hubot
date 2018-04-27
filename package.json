@@ -6,9 +6,9 @@
   "description": "pakumori-hubot",
   "dependencies": {
     "hubot": "^3.0.1",
-    "hubot-character": "blueberrystream/hubot-character#evil",
+    "hubot-character": "github:blueberrystream/hubot-character#evil",
     "hubot-heroku-keepalive": "^1.0.3",
     "hubot-slack": "^4.4.0",
-    "newrelic": "^2.4.1"
+    "newrelic": "^4.1.0"
   }
 }
