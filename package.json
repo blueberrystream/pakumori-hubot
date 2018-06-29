@@ -9,6 +9,7 @@
     "hubot-character": "github:blueberrystream/hubot-character#evil",
     "hubot-heroku-keepalive": "^1.0.3",
     "hubot-slack": "^4.4.0",
-    "newrelic": "^4.1.0"
+    "newrelic": "^4.1.0",
+    "pg": "^7.4.3"
   }
 }
