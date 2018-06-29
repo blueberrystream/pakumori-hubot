@@ -40,5 +40,5 @@ module.exports = (robot) => {
     });
   }
 
-  postMessageWithSlack('new revision is deployed!', 'C1N3XHZ0U', 'hubot-pakumori', ':pakumori:');
+  postMessageWithSlack('new revision is deployed!', 'C8B0740R1', 'hubot-pakumori', ':pakumori:');
 };
