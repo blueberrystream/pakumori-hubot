@@ -1,14 +1,15 @@
 "use strict"
 const { Client } = require('pg');
+const databaseURL = process.env.DATABASE_URL;
 
-module.exports = (robot, process) => {
+module.exports = (robot) => {
   robot.hear(/https:\/\/(youtu\.be|www\.youtube\.com)\//, (res) => {
     robot.logger.info(res.message);
-    robot.logger.info(process.env.DATABASE_URL);
+    robot.logger.info(databaseURL);
     if (res.room !== 'C8B0740R1') return;
 
     const client = new Client({
-      connectionString: process.env.DATABASE_URL,
+      connectionString: databaseURL,
     });
     const query = 'INSERT INTO "logs" ("username", "raw_text", "ts") VALUES ("$1", "$2", "$3")';
     const values = [res.user.name, res.rawText, res.id];
