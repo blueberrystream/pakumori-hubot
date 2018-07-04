@@ -1,8 +1,10 @@
 "use strict"
 const { Client } = require('pg');
 
-module.exports = (robot) => {
+module.exports = (robot, process) => {
   robot.hear(/https:\/\/(youtu\.be|www\.youtube\.com)\//, (res) => {
+    robot.logger.info(res.message);
+    robot.logger.info(process.env.DATABASE_URL);
     if (res.room !== 'C8B0740R1') return;
 
     const client = new Client({
