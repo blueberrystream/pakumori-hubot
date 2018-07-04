@@ -8,7 +8,7 @@ module.exports = (robot) => {
     const client = new Client({
       connectionString: process.env.DATABASE_URL,
     });
-    const query = 'INSERT INTO "logs" ("username", "raw_text", "ts") VALUES ("$1", "$2", "$3")':
+    const query = 'INSERT INTO "logs" ("username", "raw_text", "ts") VALUES ("$1", "$2", "$3")';
     const values = [res.user.name, res.rawText, res.id];
 
     client.connect();
