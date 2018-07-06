@@ -1,8 +1,49 @@
 "use strict"
 const { Client } = require('pg');
 const databaseURL = process.env.DATABASE_URL;
+const format = require('string-template');
+const slackAPI = require('slackbotapi');
+const slackAPIToken = process.env.HUBOT_SLACK_TOKEN;
+
+function initSlackAPI(token) {
+  if (token === undefined) {
+    throw new Error(`HUBOT_SLACK_TOKEN cannot be empty! value: undefined`);
+  }
+  return new slackAPI({
+    'token': token,
+    'logging': false,
+    'autoReconnect': true
+  });
+}
+
 
 module.exports = (robot) => {
+  let slack;
+  try {
+    slack = initSlackAPI(slackAPIToken);
+  } catch (e) {
+    robot.logger.error(e.toString());
+  }
+
+  function postMessageWithSlack(message, channel, userName, icon) {
+    return new Promise((resolve, reject) => {
+      slack.reqAPI("chat.postMessage", {
+        channel: channel,
+        text: message,
+        username: userName,
+        link_names: 0,
+        pretty: 1,
+        icon_emoji: icon
+      }, (res) => {
+        if(!res.ok) {
+          robot.logger.error(`something occured with slack api. ${res.error}`);
+          reject(new Error(`something occured with slack api. ${res.error}`));
+        }
+        resolve();
+      });
+    });
+  }
+
   robot.hear(/https:\/\/(youtu\.be|www\.youtube\.com)\//, (res) => {
     if (res.message.room !== 'C9A5XLRNG') return;
 
@@ -16,6 +57,35 @@ module.exports = (robot) => {
     client.connect();
     client.query(query, values)
       .then(res => robot.logger.debug(res))
-      .catch(e => robot.logger.error(e.stack));
+      .catch(e => robot.logger.error(e.stack))
+      .then(() => client.end());
+  });
+
+  robot.respond(/jukelist/, (res) => {
+    const client = new Client({
+      connectionString: databaseURL,
+      ssl: true
+    });
+    const query = 'SELECT * FROM "logs" ORDER BY id DESC LIMIT 5';
+
+    client.connect();
+    client.query(query)
+      .then(result => {
+        var message = '';
+        var timestamp = '';
+        result.rows.forEach(row => {
+          timestamp = new Date(row['ts'] * 1000);
+          timestamp = timestamp.toLocaleString();
+          message += format("[{timestamp}] {username}: {text}\n", {
+            username: row['username'],
+            text: row['text'],
+            timestamp: timestamp
+          });
+        });
+
+        postMessageWithSlack(message, res.message.room, 'Jukebox', ':radio:');
+      })
+      .catch(e => robot.logger.error(e.stack))
+      .then(() => client.end());
   });
 };
