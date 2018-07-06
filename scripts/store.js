@@ -70,8 +70,8 @@ module.exports = (robot) => {
     client.connect();
     client.query(query)
       .then(result => {
-        var message = '';
-        var timestamp = '';
+        let message = '';
+        let timestamp = '';
         result.rows.forEach(row => {
           timestamp = new Date(row.ts * 1000);
           timestamp = timestamp.toLocaleString();
