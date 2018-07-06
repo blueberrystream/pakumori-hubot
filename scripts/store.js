@@ -74,11 +74,11 @@ module.exports = (robot) => {
         var message = '';
         var timestamp = '';
         result.rows.forEach(row => {
-          timestamp = new Date(row['ts'] * 1000);
+          timestamp = new Date(row.ts * 1000);
           timestamp = timestamp.toLocaleString();
           message += format("[{timestamp}] {username}: {text}\n", {
-            username: row['username'],
-            text: row['text'],
+            username: row.username,
+            text: row.text,
             timestamp: timestamp
           });
         });
