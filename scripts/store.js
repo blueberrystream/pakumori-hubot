@@ -1,7 +1,6 @@
 "use strict"
 const { Client } = require('pg');
 const databaseURL = process.env.DATABASE_URL;
-const format = require('string-template');
 const slackAPI = require('slackbotapi');
 const slackAPIToken = process.env.HUBOT_SLACK_TOKEN;
 
@@ -76,11 +75,7 @@ module.exports = (robot) => {
         result.rows.forEach(row => {
           timestamp = new Date(row.ts * 1000);
           timestamp = timestamp.toLocaleString();
-          message += format("[{timestamp}] {username}: {text}\n", {
-            username: row.username,
-            text: row.text,
-            timestamp: timestamp
-          });
+          message += `[${row.timestamp}] ${row.username}: ${row.text}\n`;
         });
 
         postMessageWithSlack(message, res.message.room, 'Jukebox', ':radio:');
