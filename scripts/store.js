@@ -65,7 +65,7 @@ module.exports = (robot) => {
       connectionString: databaseURL,
       ssl: true
     });
-    let count = res.message.text.match(/jukelist ?\d+?/)[1];
+    let count = res.message.text.match(/jukelist ?(\d+)?/)[1];
     if (count === void 0) {
       count = 5;
     } else {
@@ -82,7 +82,7 @@ module.exports = (robot) => {
         result.rows.forEach(row => {
           timestamp = new Date(row.ts * 1000);
           timestamp = timestamp.toLocaleString();
-          message += `[${row.timestamp}] ${row.username}: ${row.text}\n`;
+          message += `[${timestamp}] ${row.username}: ${row.text}\n`;
         });
 
         postMessageWithSlack(message, res.message.room, 'Jukebox', ':radio:');
