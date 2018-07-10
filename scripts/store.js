@@ -66,16 +66,17 @@ module.exports = (robot) => {
       ssl: true
     });
     let count = res.message.text.match(/jukelist ?(\d+)?/)[1];
-    if (count === void 0) {
+    if (count === void 0 || count < 0) {
       count = 5;
     } else {
       count = count * 1;
     }
     if (count > 100) count = 100;
-    const query = `SELECT * FROM "logs" ORDER BY id DESC LIMIT ${count}`;
+    const query = 'SELECT * FROM "logs" ORDER BY id DESC LIMIT $1';
+    const values = [count];
 
     client.connect();
-    client.query(query)
+    client.query(query, values)
       .then(result => {
         let message = '';
         let timestamp = '';
