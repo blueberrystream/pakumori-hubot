@@ -43,7 +43,7 @@ module.exports = (robot) => {
     });
   }
 
-  robot.hear(/https:\/\/(youtu\.be|www\.youtube\.com)\//, (res) => {
+  robot.hear(/https:\/\/(youtu\.be|www\.youtube\.com|soundcloud\.com)\//, (res) => {
     if (res.message.room !== 'C9A5XLRNG') return;
 
     const client = new Client({
