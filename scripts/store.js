@@ -65,7 +65,7 @@ module.exports = (robot) => {
       connectionString: databaseURL,
       ssl: true
     });
-    let count = res.match(/jukelist ?\d+?/)[1];
+    let count = res.message.text.match(/jukelist ?\d+?/)[1];
     if (count === void 0) {
       count = 5;
     } else {
