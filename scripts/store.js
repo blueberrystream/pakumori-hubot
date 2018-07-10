@@ -66,7 +66,7 @@ module.exports = (robot) => {
       ssl: true
     });
     let count = res.message.text.match(/jukelist ?(\d+)?/)[1];
-    if (count === void 0) {
+    if (count === void 0 || count < 0) {
       count = 5;
     } else {
       count = count * 1;
