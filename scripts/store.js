@@ -82,7 +82,7 @@ module.exports = (robot) => {
         result.rows.forEach(row => {
           timestamp = new Date(row.ts * 1000);
           timestamp = timestamp.toLocaleString();
-          message += `[${row.timestamp}] ${row.username}: ${row.text}\n`;
+          message += `[${timestamp}] ${row.username}: ${row.text}\n`;
         });
 
         postMessageWithSlack(message, res.message.room, 'Jukebox', ':radio:');
