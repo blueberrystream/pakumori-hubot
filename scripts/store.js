@@ -60,12 +60,19 @@ module.exports = (robot) => {
       .then(() => client.end());
   });
 
-  robot.respond(/jukelist/, (res) => {
+  robot.respond(/jukelist( \d+)?/, (res) => {
     const client = new Client({
       connectionString: databaseURL,
       ssl: true
     });
-    const query = 'SELECT * FROM "logs" ORDER BY id DESC LIMIT 5';
+    let count = res.match(/jukelist ?\d+?/)[1];
+    if (count === void 0) {
+      count = 5;
+    } else {
+      count = count * 1;
+    }
+    if (count > 100) count = 100;
+    const query = `SELECT * FROM "logs" ORDER BY id DESC LIMIT ${count}`;
 
     client.connect();
     client.query(query)
