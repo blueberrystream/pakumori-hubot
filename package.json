@@ -9,7 +9,7 @@
     "debug": "^3.1.0",
     "fresh": "^0.5.2",
     "https-proxy-agent": "^2.2.0",
-    "hubot": "^2.19.0",
+    "hubot": "^3.1.0",
     "hubot-character": "github:blueberrystream/hubot-character#evil",
     "hubot-heroku-keepalive": "^1.0.3",
     "hubot-slack": "^4.5.3",
