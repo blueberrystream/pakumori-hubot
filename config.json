@@ -75,14 +75,6 @@
       ]
     },
     {
-      "name": "つらい",
-      "icon": ":hot_pepper:",
-      "hear": "つらい|辛い|ts?urai",
-      "messages": [
-        "https://pbs.twimg.com/media/DD1kF_RV0AEzQde.jpg"
-      ]
-    },
-    {
       "name": "みんなのテンホウ",
       "icon": ":man_with_gua_pi_mao:",
       "respond": "tenhou?|テンホウ",
