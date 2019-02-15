@@ -6,17 +6,17 @@
   "description": "pakumori-hubot",
   "dependencies": {
     "base64-url": "^2.2.0",
-    "debug": "^4.0.0",
+    "debug": "^4.1.1",
     "fresh": "^0.5.2",
-    "https-proxy-agent": "^2.2.0",
-    "hubot": "^3.1.1",
+    "https-proxy-agent": "^2.2.1",
+    "hubot": "^3.2.0",
     "hubot-character": "github:blueberrystream/hubot-character#evil",
     "hubot-heroku-keepalive": "^1.0.3",
-    "hubot-slack": "^4.5.3",
-    "lodash": "^4.17.10",
-    "mime": "^2.3.1",
+    "hubot-slack": "^4.6.0",
+    "lodash": "^4.17.11",
+    "mime": "^2.4.0",
     "negotiator": "^0.6.1",
-    "newrelic": "^5.0.0",
-    "pg": "^7.4.3"
+    "newrelic": "^5.3.0",
+    "pg": "^7.8.0"
   }
 }
