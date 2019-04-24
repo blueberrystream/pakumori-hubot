@@ -221,6 +221,14 @@
         ":tampsjospi:",
         ":tampsjospi::tampsjospi::tampsjospi::tampsjospi::tampsjospi::tampsjospi::tampsjospi::tampsjospi:\n:tampsjospi: たｍｐｓじょｓぴ :tampsjospi:\n:tampsjospi::tampsjospi::tampsjospi::tampsjospi::tampsjospi::tampsjospi::tampsjospi::tampsjospi:"
       ]      
+    },
+    {
+      "name": "うんち！ｗ",
+      "icon": ":poop:",
+      "hear": "なぁ！",
+      "messages": [
+        "うんち！ｗ"
+      ]      
     }
   ]
 }
