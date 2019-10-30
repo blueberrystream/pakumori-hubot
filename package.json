@@ -15,7 +15,7 @@
     "lodash": "^4.17.13",
     "mime": "^2.4.3",
     "negotiator": "^0.6.2",
-    "newrelic": "^5.9.1",
+    "newrelic": "^6.0.0",
     "pg": "^7.11.0",
     "https-proxy-agent": "^3.0.0",
     "extend": "^3.0.2",
