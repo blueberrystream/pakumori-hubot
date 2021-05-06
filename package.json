@@ -12,7 +12,7 @@
     "hubot-character": "github:blueberrystream/hubot-character#evil",
     "hubot-heroku-keepalive": "^1.0.3",
     "hubot-slack": "^4.7.1",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "mime": "^2.4.3",
     "negotiator": "^0.6.2",
     "newrelic": "^6.0.0",
