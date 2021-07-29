@@ -1,6 +1,8 @@
 "use strict"
 const slackAPI = require('slackbotapi');
 const slackAPIToken = process.env.HUBOT_SLACK_TOKEN;
+const fs = require('fs');
+const _array = require('lodash/array');
 
 function initSlackAPI(token) {
   if (token === undefined) {
@@ -40,5 +42,14 @@ module.exports = (robot) => {
     });
   }
 
+  function pick10Decomojis() {
+    const json = fs.readFileSync('v5.18.1_all.json', 'utf8');
+    const decomojis = JSON.parse(json);
+    const pickedDecomojis = _array.sampleSize(decomojis, 10);
+
+    return pickedDecomojis.map(decomoji => `:${decomoji.name}:`).join(' ');
+  }
+
   postMessageWithSlack('good morning!', 'C8B0740R1', 'hubot-pakumori', ':pakumori:');
+  postMessageWithSlack(pick10Decomojis(), 'C8B0740R1', 'hubot-pakumori', ':pakumori:');
 };
