@@ -43,7 +43,7 @@ module.exports = (robot) => {
   }
 
   function pick10Decomojis() {
-    const json = fs.readFileSync('v5.18.1_all.json', 'utf8');
+    const json = fs.readFileSync('./scripts/v5.18.1_all.json', 'utf8');
     const decomojis = JSON.parse(json);
     const pickedDecomojis = _array.sampleSize(decomojis, 10);
 
