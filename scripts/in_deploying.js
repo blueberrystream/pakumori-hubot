@@ -51,5 +51,5 @@ module.exports = (robot) => {
   }
 
   postMessageWithSlack('good morning!', 'C8B0740R1', 'hubot-pakumori', ':pakumori:');
-  postMessageWithSlack(pick10Decomojis(), 'C8B0740R1', 'hubot-pakumori', ':pakumori:');
+  postMessageWithSlack(pick10Decomojis(), 'CA43D4J2U', 'デコモジ10選', ':dekomori:');
 };
