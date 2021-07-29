@@ -2,7 +2,7 @@
 const slackAPI = require('slackbotapi');
 const slackAPIToken = process.env.HUBOT_SLACK_TOKEN;
 const fs = require('fs');
-const _array = require('lodash/array');
+const _array = require('lodash/collection');
 
 function initSlackAPI(token) {
   if (token === undefined) {
